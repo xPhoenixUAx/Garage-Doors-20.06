@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="300" viewBox="0 0 520 300">
+  <g fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity=".34">
+    <g transform="translate(24 24) rotate(-12)">
+      <path d="M8 40h74l14 28H22z"/>
+      <path d="M24 40V18h42v22"/>
+      <path d="M32 30h26"/>
+      <circle cx="35" cy="75" r="6"/>
+      <circle cx="76" cy="75" r="6"/>
+    </g>
+    <g transform="translate(185 8) rotate(18)">
+      <path d="M15 6h34l10 58H5z"/>
+      <path d="M16 22h32M13 39h38"/>
+      <path d="M24 6V0M40 6V0"/>
+    </g>
+    <g transform="translate(338 18) rotate(-20)">
+      <path d="M18 8l28 28"/>
+      <path d="M40 2l14 14-9 9-14-14z"/>
+      <path d="M4 50l18-18 10 10-18 18z"/>
+    </g>
+    <g transform="translate(438 24) rotate(10)">
+      <path d="M8 76V10h58v66"/>
+      <path d="M8 28h58M8 46h58M8 64h58"/>
+      <path d="M24 10V76M42 10V76"/>
+    </g>
+    <g transform="translate(72 142) rotate(12)">
+      <path d="M16 70c-8-18-9-36-4-52 3-9 15-6 14 3l-1 19"/>
+      <path d="M28 58V10c0-8 13-8 13 0v34"/>
+      <path d="M43 58V15c0-8 13-8 13 0v36"/>
+      <path d="M58 60V28c0-8 13-8 13 0v30c0 24-12 38-29 38-12 0-22-8-26-26"/>
+    </g>
+    <g transform="translate(220 154) rotate(-7)">
+      <path d="M16 96V8h48v88"/>
+      <path d="M16 22h48M16 36h48M16 50h48M16 64h48M16 78h48"/>
+      <path d="M30 8V96M50 8V96"/>
+    </g>
+    <g transform="translate(364 150) rotate(22)">
+      <path d="M22 8a22 22 0 0 0 24 35L20 69 5 54l26-26A22 22 0 0 0 22 8z"/>
+      <path d="M43 10l-9 9"/>
+    </g>
+    <g transform="translate(458 160) rotate(-10)">
+      <path d="M16 62h52"/>
+      <path d="M24 62 34 12h16l10 50"/>
+      <path d="M29 38h26"/>
+    </g>
+    <g transform="translate(18 238) rotate(-5)">
+      <path d="M12 20h62"/>
+      <path d="M24 20v50h38V20"/>
+      <path d="M24 36h38M24 52h38"/>
+    </g>
+    <g transform="translate(170 244) rotate(17)">
+      <path d="M12 50h62"/>
+      <path d="M24 50V24h38v26"/>
+      <path d="M34 24V10h18v14"/>
+    </g>
+    <g transform="translate(326 238) rotate(-18)">
+      <circle cx="36" cy="36" r="24"/>
+      <path d="M36 12v24l17 11"/>
+    </g>
+  </g>
+</svg>

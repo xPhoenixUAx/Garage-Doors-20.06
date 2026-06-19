@@ -1,0 +1,22 @@
+window.SITE_CONFIG = {
+  companyName: "DoorCraft Garage Services",
+  companyLegalName: "DoorCraft Garage Services LLC",
+  companyId: "REG ID: DCG-48291",
+  phone: "+12017193488",
+  phoneDisplay: "(201) 719-3488",
+  phoneButtonLabel: "Call for Service",
+  email: "service@doorcraftgarage.com",
+  website: "www.doorcraftgarage.com",
+  addressLine1: "1847 Ridgeview Drive",
+  addressLine2: "Jersey City, NJ 07305",
+  serviceArea: "Jersey City, Newark, Hoboken, Bayonne, Union City, and nearby North Jersey communities",
+  businessHours: "Mon - Sat: 7:00 AM to 8:00 PM. Emergency requests accepted after hours.",
+  footerTextPrimary: "Full-cycle garage door service for homes, rental properties, small businesses, warehouses, and managed buildings.",
+  footerTextSecondary: "We help customers compare repair, replacement, installation, maintenance, and emergency options from independent local providers.",
+  disclaimerShort: "Free matching service. Independent local providers perform the work.",
+  disclaimerFull: "Disclaimer: This site is a free service to assist customers in connecting with local garage door service providers. All contractors/providers are independent and this site does not warrant or guarantee any work performed. It is the responsibility of the customer to verify that the hired contractor/provider furnishes the necessary license, insurance, certification, or other credentials required for the work being performed. All persons depicted in a photo or video are actors or models and not contractors/providers listed on this site.",
+  footerDisclaimer: "DoorCraft Garage Services is an aggregator and customer inquiry service. We are not a garage door contractor and do not perform installations, repairs, inspections, or emergency work directly.",
+  copyrightLine: "All rights reserved.",
+  ctaPrimary: "Get A Quote",
+  ctaSecondary: "Schedule Service"
+};
