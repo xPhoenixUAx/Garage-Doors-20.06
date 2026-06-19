@@ -1,181 +1,413 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{companyName}} | Full-Cycle Garage Door Services</title>
-  <meta name="description" content="Garage door repair, installation, opener service, spring replacement, maintenance, emergency help, and commercial garage door support.">
-  <link rel="icon" href="favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/bundle.css?v=2026062024">
-</head>
-<body>
-  <div data-site-header></div>
-  <main>
-    <section class="hero" style="--hero-image:url('/img/generated/home-hero.webp')">
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <p class="eyebrow"><i data-lucide="warehouse"></i> Garage door repair, installation and replacement</p>
-          <h1>Complete Garage Door Service From First Call To Final Test</h1>
-          <p>Compare practical repair, replacement, opener, spring, maintenance, and emergency options from independent local garage door providers.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="contact.html"><span data-cta-primary></span><b></b></a>
-            <a class="call-inline" data-phone-link href="#"><i data-lucide="phone-call"></i><span data-phone-text></span></a>
-          </div>
-        </div>
-      </div>
-      <div class="hero-stats">
-        <div><strong data-counter="8">0</strong><span>Service categories</span></div>
-        <div><strong data-counter="24">0</strong><span>Urgent request routing</span></div>
-        <div><strong data-counter="360">0</strong><span>Door system checks</span></div>
-        <div><strong data-counter="100">0</strong><span>Independent providers</span></div>
-      </div>
-    </section>
-    <section class="service-form-band">
-      <div class="container request-box reveal">
-        <p class="eyebrow"><i data-lucide="calendar-check"></i> Schedule a service request</p>
-        <h2>Tell us what your garage door is doing</h2>
-        <form class="request-form" data-contact-form>
-          <input aria-label="Full name" placeholder="Full Name" required>
-          <input type="email" aria-label="Email" placeholder="Email" required>
-          <input type="tel" aria-label="Phone" placeholder="Phone" required>
-          <select aria-label="Type of service"><option>Type Of Service</option><option>Repair</option><option>Installation</option><option>Emergency</option></select>
-          <button class="btn btn-primary" type="submit"><span>Send</span><b></b></button>
-        </form>
-        <div class="success-message" data-success-message></div>
-      </div>
-    </section>
-    <section class="section feature-strip-section section-after-form">
-      <div class="container feature-strip">
-        <article class="feature-strip-item reveal">
-          <span class="feature-strip-icon"><i data-lucide="door-open"></i></span>
-          <h3>Urgent Garage Door Repair</h3>
-          <p>Help for stuck, noisy, uneven, off-track, or damaged garage doors when safe access matters.</p>
-        </article>
-        <article class="feature-strip-item reveal">
-          <span class="feature-strip-icon"><i data-lucide="hard-hat"></i></span>
-          <h3>Trusted Local Providers</h3>
-          <p>Connect with independent garage door specialists for repair, installation, maintenance, and replacement options.</p>
-        </article>
-        <article class="feature-strip-item reveal">
-          <span class="feature-strip-icon"><i data-lucide="badge-check"></i></span>
-          <h3>Personalized Solutions</h3>
-          <p>Compare practical paths for springs, openers, tracks, panels, commercial doors, and smart controls.</p>
-        </article>
-      </div>
-    </section>
-    <section class="section blue-section services-showcase">
-      <div class="container">
-        <div class="section-head services-showcase-head reveal">
-          <div><p class="eyebrow"><i data-lucide="warehouse"></i> Garage door installation & repair</p><h2>Fast & Professional Services We Offer</h2></div>
-          <p>From repair and replacement to commercial doors, customers can quickly find the service path that matches the door problem.</p>
-        </div>
-        <button class="showcase-arrow showcase-arrow-left" type="button" data-showcase-prev aria-label="Previous services"><i data-lucide="arrow-left"></i></button>
-        <div class="showcase-viewport">
-          <div class="showcase-grid" data-services-grid data-home-showcase></div>
-        </div>
-        <button class="showcase-arrow showcase-arrow-right" type="button" data-showcase-next aria-label="Next services"><i data-lucide="arrow-right"></i></button>
-        <div class="services-cta reveal">
-          <p>Want Your Garage Door Repair or Installation? We're Ready To Start!</p>
-          <strong>Call Us Today <i data-lucide="phone-call"></i> <a data-phone-link data-phone-text href="#"></a> or <a href="contact.html">Request a FREE Quote</a></strong>
-        </div>
-      </div>
-    </section>
-    <section class="section why-section">
-      <div class="container why-grid">
-        <div class="why-left reveal">
-          <p class="eyebrow"><i data-lucide="warehouse"></i> Garage door installation & repair</p>
-          <h2>Why People Trust And Choose DoorCraft</h2>
-          <div class="why-photo">
-            <img src="img/generated/home-hero.webp" alt="Garage door service at a residential home">
-            <div class="experience-badge">
-              <strong>25</strong>
-              <span>Years of smart working experience</span>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{companyName}} | Full-Cycle Garage Door Services</title>
+    <meta
+      name="description"
+      content="Garage door repair, installation, opener service, spring replacement, maintenance, emergency help, and commercial garage door support."
+    />
+    <link rel="icon" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/bundle.css?v=2026062042" />
+  </head>
+  <body>
+    <div data-site-header></div>
+    <main>
+      <section
+        class="hero"
+        style="--hero-image: url(&quot;/img/generated/home-hero.webp&quot;)"
+      >
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">
+              <i data-lucide="warehouse"></i> Garage door repair, installation
+              and replacement
+            </p>
+            <h1>Complete Garage Door Service From First Call To Final Test</h1>
+            <p>
+              Compare practical repair, replacement, opener, spring,
+              maintenance, and emergency options from independent local garage
+              door providers.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="contact.html"
+                ><span data-cta-primary></span><b></b
+              ></a>
+              <a class="call-inline" data-phone-link href="#"
+                ><i data-lucide="phone-call"></i><span data-phone-text></span
+              ></a>
             </div>
           </div>
         </div>
-        <div class="why-reasons">
-          <article class="why-card reveal"><span><i data-lucide="warehouse"></i></span><h3>Quality Services</h3><p>Clear service paths for repairs, replacements, openers, springs, and complete door systems.</p></article>
-          <article class="why-card reveal"><span><i data-lucide="hard-hat"></i></span><h3>Expert Staff</h3><p>Requests are routed with the right door type, urgency, and service details from the start.</p></article>
-          <article class="why-card reveal"><span><i data-lucide="badge-dollar-sign"></i></span><h3>Simple Pricing</h3><p>Compare repair, replacement, maintenance, and upgrade options before committing.</p></article>
-          <article class="why-card reveal"><span><i data-lucide="clock-3"></i></span><h3>Available 24/7</h3><p>Emergency request routing for stuck-open doors, trapped vehicles, and unsafe failures.</p></article>
-          <article class="why-card reveal"><span><i data-lucide="map-pin"></i></span><h3>Covering All Areas</h3><p>Serving homes, rental properties, small businesses, warehouses, and managed buildings.</p></article>
-          <article class="why-card reveal"><span><i data-lucide="award"></i></span><h3>Work Reviewed</h3><p>Customers are reminded to verify provider credentials, insurance, and project terms.</p></article>
-        </div>
-      </div>
-    </section>
-    <section class="section testimonials-section">
-      <div class="container testimonials-grid">
-        <div class="testimonials-intro reveal">
-          <p class="eyebrow"><i data-lucide="warehouse"></i> Garage door installation & repair</p>
-          <h2>Fully Satisfied And Happy Customers</h2>
-          <p>Customers use DoorCraft to understand the right service path, compare practical options, and connect with local garage door providers for repair, replacement, and urgent access issues.</p>
-          <a class="outline-link" href="contact.html">View All Customer Reviews</a>
-        </div>
-        <div class="testimonial-card reveal">
-          <div class="quote-box">
-            <span class="quote-mark quote-start">"</span>
-            <p>The request form helped us explain the stuck door clearly. A local provider called back with the right questions and walked us through repair options before the visit.</p>
-            <span class="quote-mark quote-end">"</span>
+        <div class="hero-stats">
+          <div>
+            <strong data-counter="8">0</strong><span>Service categories</span>
           </div>
-          <div class="review-author">
-            <div><strong>Aaron Finch</strong><small>Newark, NJ</small><span class="stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></span></div>
+          <div>
+            <strong data-counter="24">0</strong
+            ><span>Urgent request routing</span>
+          </div>
+          <div>
+            <strong data-counter="360">0</strong><span>Door system checks</span>
+          </div>
+          <div>
+            <strong data-counter="100">0</strong
+            ><span>Independent providers</span>
           </div>
         </div>
-        <div class="testimonial-card reveal">
-          <div class="quote-box">
-            <span class="quote-mark quote-start">"</span>
-            <p>We were not sure if the opener was bad or the spring was broken. The site made it simple to choose the right category and request urgent help.</p>
-            <span class="quote-mark quote-end">"</span>
+      </section>
+      <section class="service-form-band">
+        <div class="container request-box reveal">
+          <p class="eyebrow">
+            <i data-lucide="calendar-check"></i> Schedule a service request
+          </p>
+          <h2>Tell us what your garage door is doing</h2>
+          <form class="request-form" data-contact-form>
+            <input aria-label="Full name" placeholder="Full Name" required />
+            <input
+              type="email"
+              aria-label="Email"
+              placeholder="Email"
+              required
+            />
+            <input type="tel" aria-label="Phone" placeholder="Phone" required />
+            <select aria-label="Type of service">
+              <option>Type Of Service</option>
+              <option>Repair</option>
+              <option>Installation</option>
+              <option>Emergency</option>
+            </select>
+            <button class="btn btn-primary" type="submit">
+              <span>Send</span><b></b>
+            </button>
+          </form>
+          <div class="success-message" data-success-message></div>
+        </div>
+      </section>
+      <section class="section feature-strip-section section-after-form">
+        <div class="container feature-strip">
+          <article class="feature-strip-item reveal">
+            <span class="feature-strip-icon"
+              ><i data-lucide="door-open"></i
+            ></span>
+            <h3>Urgent Garage Door Repair</h3>
+            <p>
+              Help for stuck, noisy, uneven, off-track, or damaged garage doors
+              when safe access matters.
+            </p>
+          </article>
+          <article class="feature-strip-item reveal">
+            <span class="feature-strip-icon"
+              ><i data-lucide="hard-hat"></i
+            ></span>
+            <h3>Trusted Local Providers</h3>
+            <p>
+              Connect with independent garage door specialists for repair,
+              installation, maintenance, and replacement options.
+            </p>
+          </article>
+          <article class="feature-strip-item reveal">
+            <span class="feature-strip-icon"
+              ><i data-lucide="badge-check"></i
+            ></span>
+            <h3>Personalized Solutions</h3>
+            <p>
+              Compare practical paths for springs, openers, tracks, panels,
+              commercial doors, and smart controls.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="section blue-section services-showcase">
+        <div class="container">
+          <div class="section-head services-showcase-head reveal">
+            <div>
+              <p class="eyebrow">
+                <i data-lucide="warehouse"></i> Garage door installation &
+                repair
+              </p>
+              <h2>Fast & Professional Services We Offer</h2>
+            </div>
+            <p>
+              From repair and replacement to commercial doors, customers can
+              quickly find the service path that matches the door problem.
+            </p>
           </div>
-          <div class="review-author">
-            <div><strong>Luke Braxton</strong><small>Jersey City, NJ</small><span class="stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></span></div>
+          <button
+            class="showcase-arrow showcase-arrow-left"
+            type="button"
+            data-showcase-prev
+            aria-label="Previous services"
+          >
+            <i data-lucide="arrow-left"></i>
+          </button>
+          <div class="showcase-viewport">
+            <div
+              class="showcase-grid"
+              data-services-grid
+              data-home-showcase
+            ></div>
+          </div>
+          <button
+            class="showcase-arrow showcase-arrow-right"
+            type="button"
+            data-showcase-next
+            aria-label="Next services"
+          >
+            <i data-lucide="arrow-right"></i>
+          </button>
+          <div class="services-cta reveal">
+            <p>
+              Want Your Garage Door Repair or Installation? We're Ready To
+              Start!
+            </p>
+            <strong
+              >Call Us Today <i data-lucide="phone-call"></i>
+              <a data-phone-link data-phone-text href="#"></a> or
+              <a href="contact.html">Request a FREE Quote</a></strong
+            >
           </div>
         </div>
-      </div>
-    </section>
-    <section class="section blue-section">
-      <div class="container split-layout">
-        <div class="section-image reveal"><img src="img/services/commercial-garage-doors.webp" alt="Commercial garage door service"></div>
-        <div class="reveal">
-          <p class="eyebrow">Residential and commercial</p>
-          <h2>Homes, rental properties, shops, warehouses, and managed buildings</h2>
-          <p>Residential customers usually care about access, noise, insulation, safety, and curb appeal. Commercial customers care about uptime, heavier hardware, bay access, and planned maintenance. The service structure supports both.</p>
-          <ul class="check-list">
-            <li><i data-lucide="check"></i><span>Repair and replacement paths for homes</span></li>
-            <li><i data-lucide="check"></i><span>Commercial bay and roll-up door support</span></li>
-            <li><i data-lucide="check"></i><span>Maintenance planning for high-use doors</span></li>
-          </ul>
+      </section>
+      <section class="section why-section">
+        <div class="container why-grid">
+          <div class="why-left reveal">
+            <p class="eyebrow">
+              <i data-lucide="warehouse"></i> Garage door installation & repair
+            </p>
+            <h2>Why People Trust And Choose DoorCraft</h2>
+            <div class="why-photo">
+              <img
+                src="img/generated/home-hero.webp"
+                alt="Garage door service at a residential home"
+              />
+              <div class="experience-badge">
+                <strong>25</strong>
+                <span>Years of smart working experience</span>
+              </div>
+            </div>
+          </div>
+          <div class="why-reasons">
+            <article class="why-card reveal">
+              <span><i data-lucide="warehouse"></i></span>
+              <h3>Quality Services</h3>
+              <p>
+                Clear service paths for repairs, replacements, openers, springs,
+                and complete door systems.
+              </p>
+            </article>
+            <article class="why-card reveal">
+              <span><i data-lucide="hard-hat"></i></span>
+              <h3>Expert Staff</h3>
+              <p>
+                Requests are routed with the right door type, urgency, and
+                service details from the start.
+              </p>
+            </article>
+            <article class="why-card reveal">
+              <span><i data-lucide="badge-dollar-sign"></i></span>
+              <h3>Simple Pricing</h3>
+              <p>
+                Compare repair, replacement, maintenance, and upgrade options
+                before committing.
+              </p>
+            </article>
+            <article class="why-card reveal">
+              <span><i data-lucide="clock-3"></i></span>
+              <h3>Available 24/7</h3>
+              <p>
+                Emergency request routing for stuck-open doors, trapped
+                vehicles, and unsafe failures.
+              </p>
+            </article>
+            <article class="why-card reveal">
+              <span><i data-lucide="map-pin"></i></span>
+              <h3>Covering All Areas</h3>
+              <p>
+                Serving homes, rental properties, small businesses, warehouses,
+                and managed buildings.
+              </p>
+            </article>
+            <article class="why-card reveal">
+              <span><i data-lucide="award"></i></span>
+              <h3>Work Reviewed</h3>
+              <p>
+                Customers are reminded to verify provider credentials,
+                insurance, and project terms.
+              </p>
+            </article>
+          </div>
         </div>
-      </div>
-    </section>
-    <section class="section faq-section">
-      <div class="container narrow">
-        <p class="eyebrow reveal">Before customers call</p>
-        <h2 class="reveal">The questions that help route the right provider</h2>
-        <div class="accordion">
-          <button class="acc-btn active" type="button">Is the door open, closed, or stuck halfway?<i data-lucide="chevron-down"></i></button>
-          <div class="acc-panel open"><p>This tells a provider whether the issue is mainly access, security, balance, opener travel, or a potentially unsafe off-track condition.</p></div>
-          <button class="acc-btn" type="button">Did you hear a loud bang or see a spring gap?<i data-lucide="chevron-down"></i></button>
-          <div class="acc-panel"><p>A loud bang often points to spring failure. The door may be too heavy for the opener and should not be forced.</p></div>
-          <button class="acc-btn" type="button">Is the opener moving but the door is not?<i data-lucide="chevron-down"></i></button>
-          <div class="acc-panel"><p>The problem may be a disconnected trolley, broken spring, stripped opener gear, cable issue, or door imbalance. The door and opener should be checked together.</p></div>
+      </section>
+      <section class="section testimonials-section">
+        <div class="container testimonials-grid">
+          <div class="testimonials-intro reveal">
+            <p class="eyebrow">
+              <i data-lucide="warehouse"></i> Garage door installation & repair
+            </p>
+            <h2>Fully Satisfied And Happy Customers</h2>
+            <p>
+              Customers use DoorCraft to understand the right service path,
+              compare practical options, and connect with local garage door
+              providers for repair, replacement, and urgent access issues.
+            </p>
+            <a class="outline-link" href="contact.html"
+              >View All Customer Reviews</a
+            >
+          </div>
+          <div class="testimonial-card reveal">
+            <div class="quote-box">
+              <span class="quote-mark quote-start">"</span>
+              <p>
+                The request form helped us explain the stuck door clearly. A
+                local provider called back with the right questions and walked
+                us through repair options before the visit.
+              </p>
+              <span class="quote-mark quote-end">"</span>
+            </div>
+            <div class="review-author">
+              <div>
+                <strong>Aaron Finch</strong><small>Newark, NJ</small
+                ><span class="stars"
+                  ><i data-lucide="star"></i><i data-lucide="star"></i
+                  ><i data-lucide="star"></i><i data-lucide="star"></i
+                  ><i data-lucide="star"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card reveal">
+            <div class="quote-box">
+              <span class="quote-mark quote-start">"</span>
+              <p>
+                We were not sure if the opener was bad or the spring was broken.
+                The site made it simple to choose the right category and request
+                urgent help.
+              </p>
+              <span class="quote-mark quote-end">"</span>
+            </div>
+            <div class="review-author">
+              <div>
+                <strong>Luke Braxton</strong><small>Jersey City, NJ</small
+                ><span class="stars"
+                  ><i data-lucide="star"></i><i data-lucide="star"></i
+                  ><i data-lucide="star"></i><i data-lucide="star"></i
+                  ><i data-lucide="star"></i
+                ></span>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
-    <section class="section blue-section final-cta-section">
-      <div class="container split-layout">
-        <div class="reveal"><p class="eyebrow">Ready when the door is not</p><h2>Request help for repair, replacement, maintenance, or urgent access problems.</h2></div>
-        <div class="reveal"><a class="btn btn-primary" href="contact.html"><span data-cta-secondary></span><b></b></a></div>
-      </div>
-    </section>
-  </main>
-  <div data-site-footer></div>
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-  <script src="js/site-config.js?v=2026062024"></script>
-  <script src="js/services-data.js?v=2026062024"></script>
-  <script src="js/main.js?v=2026062024"></script>
-</body>
+      </section>
+      <section class="section blue-section">
+        <div class="container split-layout">
+          <div class="section-image reveal">
+            <img
+              src="img/services/commercial-garage-doors.webp"
+              alt="Commercial garage door service"
+            />
+          </div>
+          <div class="reveal">
+            <p class="eyebrow">Residential and commercial</p>
+            <h2>
+              Homes, rental properties, shops, warehouses, and managed buildings
+            </h2>
+            <p>
+              Residential customers usually care about access, noise,
+              insulation, safety, and curb appeal. Commercial customers care
+              about uptime, heavier hardware, bay access, and planned
+              maintenance. The service structure supports both.
+            </p>
+            <ul class="check-list">
+              <li>
+                <i data-lucide="check"></i
+                ><span>Repair and replacement paths for homes</span>
+              </li>
+              <li>
+                <i data-lucide="check"></i
+                ><span>Commercial bay and roll-up door support</span>
+              </li>
+              <li>
+                <i data-lucide="check"></i
+                ><span>Maintenance planning for high-use doors</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="section faq-section">
+        <div class="container narrow">
+          <p class="eyebrow reveal">Before customers call</p>
+          <h2 class="reveal">
+            The questions that help route the right provider
+          </h2>
+          <div class="accordion">
+            <button class="acc-btn active" type="button">
+              Is the door open, closed, or stuck halfway?<i
+                data-lucide="chevron-down"
+              ></i>
+            </button>
+            <div class="acc-panel open">
+              <p>
+                This tells a provider whether the issue is mainly access,
+                security, balance, opener travel, or a potentially unsafe
+                off-track condition.
+              </p>
+            </div>
+            <button class="acc-btn" type="button">
+              Did you hear a loud bang or see a spring gap?<i
+                data-lucide="chevron-down"
+              ></i>
+            </button>
+            <div class="acc-panel">
+              <p>
+                A loud bang often points to spring failure. The door may be too
+                heavy for the opener and should not be forced.
+              </p>
+            </div>
+            <button class="acc-btn" type="button">
+              Is the opener moving but the door is not?<i
+                data-lucide="chevron-down"
+              ></i>
+            </button>
+            <div class="acc-panel">
+              <p>
+                The problem may be a disconnected trolley, broken spring,
+                stripped opener gear, cable issue, or door imbalance. The door
+                and opener should be checked together.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section blue-section final-cta-section">
+        <div class="container split-layout">
+          <div class="reveal">
+            <p class="eyebrow">Ready when the door is not</p>
+            <h2>
+              Request help for repair, replacement, maintenance, or urgent
+              access problems.
+            </h2>
+          </div>
+          <div class="reveal">
+            <a class="btn btn-primary" href="contact.html"
+              ><span data-cta-secondary></span><b></b
+            ></a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div data-site-footer></div>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="js/site-config.js?v=2026062042"></script>
+    <script src="js/services-data.js?v=2026062042"></script>
+    <script src="js/main.js?v=2026062042"></script>
+  </body>
 </html>

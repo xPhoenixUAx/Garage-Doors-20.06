@@ -32,10 +32,11 @@
           <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">${icon("menu")}</button>
           <nav class="nav-menu" data-nav-menu aria-label="Main navigation">
             <a href="index.html">Home</a>
-            <div class="nav-dropdown">
-              <a href="services.html">Services ${icon("chevron-down")}</a>
+            <div class="nav-dropdown" data-mobile-dropdown>
+              <a href="services.html" data-mobile-dropdown-toggle aria-expanded="false">Services ${icon("chevron-down")}</a>
               <div class="dropdown-panel">
                 <div class="dropdown-grid">
+                  <a class="all-services-link" href="services.html">${icon("layout-grid")}<span>All Services<small>View every garage door service category</small></span></a>
                   ${services.map(s => `<a href="${serviceUrl(s.slug)}">${icon(s.icon)}<span>${s.title}<small>${s.short}</small></span></a>`).join("")}
                 </div>
               </div>
@@ -101,8 +102,14 @@
       <a class="floating-call" data-phone-link href="#" aria-label="Call garage door service">${icon("phone-call")}</a>
       <button class="scroll-top" type="button" data-scroll-top aria-label="Back to top">${icon("arrow-up")}</button>
       <div class="cookie-banner" data-cookie-banner>
-        <p>We use essential cookies to remember your preference and improve this website experience. See our <a href="cookie-policy.html">Cookie Policy</a>.</p>
-        <div><button class="btn btn-dark" data-cookie-decline>Decline</button><button class="btn btn-primary" data-cookie-accept>Accept<b></b></button></div>
+        <div class="cookie-copy">
+          <span class="cookie-icon">${icon("cookie")}</span>
+          <div>
+            <strong>Cookie preferences</strong>
+            <p>We use essential cookies to remember your choice and keep the garage door service forms working. Read the <a href="cookie-policy.html">Cookie Policy</a>.</p>
+          </div>
+        </div>
+        <div class="cookie-actions"><button class="btn btn-dark" data-cookie-decline>Decline</button><button class="btn btn-primary" data-cookie-accept><span>Accept</span><b></b></button></div>
       </div>`;
   }
 
@@ -192,9 +199,12 @@
     if (!section || !track) return;
 
     const cards = qa(".service-card", track);
+    const viewport = q(".showcase-viewport", section);
     const prev = q("[data-showcase-prev]", section);
     const next = q("[data-showcase-next]", section);
     let index = 0;
+    let touchStartX = 0;
+    let touchStartY = 0;
 
     function perView() {
       return window.matchMedia("(max-width: 760px)").matches ? 1 : 3;
@@ -221,6 +231,24 @@
       index = index >= maxIndex() ? 0 : index + 1;
       update();
     });
+
+    viewport?.addEventListener("touchstart", event => {
+      const touch = event.touches[0];
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+    }, { passive: true });
+
+    viewport?.addEventListener("touchend", event => {
+      if (!window.matchMedia("(max-width: 760px)").matches) return;
+      const touch = event.changedTouches[0];
+      const deltaX = touch.clientX - touchStartX;
+      const deltaY = touch.clientY - touchStartY;
+      if (Math.abs(deltaX) < 45 || Math.abs(deltaX) < Math.abs(deltaY) * 1.2) return;
+      index = deltaX < 0
+        ? (index >= maxIndex() ? 0 : index + 1)
+        : (index <= 0 ? maxIndex() : index - 1);
+      update();
+    }, { passive: true });
 
     window.addEventListener("resize", update);
     update();
@@ -267,7 +295,7 @@
           </div>
         </div>
       </section>
-      <section class="section blue-section pattern-section">
+      <section class="section blue-section">
         <div class="container split-layout">
           <div class="reveal">
             <p class="eyebrow">Best fit</p>
@@ -325,6 +353,28 @@
     navToggle?.addEventListener("click", () => {
       const open = navMenu.classList.toggle("open");
       navToggle.setAttribute("aria-expanded", String(open));
+    });
+
+    qa("[data-mobile-dropdown-toggle]").forEach(toggle => {
+      toggle.addEventListener("click", event => {
+        if (!window.matchMedia("(max-width: 760px)").matches) return;
+        event.preventDefault();
+        const dropdown = toggle.closest("[data-mobile-dropdown]");
+        const panel = q(".dropdown-panel", dropdown);
+        const open = dropdown.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", String(open));
+        if (panel) panel.style.maxHeight = open ? `${panel.scrollHeight}px` : "0px";
+      });
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.matchMedia("(max-width: 760px)").matches) return;
+      qa("[data-mobile-dropdown]").forEach(dropdown => {
+        dropdown.classList.remove("open");
+        q("[data-mobile-dropdown-toggle]", dropdown)?.setAttribute("aria-expanded", "false");
+        const panel = q(".dropdown-panel", dropdown);
+        if (panel) panel.style.maxHeight = "";
+      });
     });
 
     scrollTop?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
