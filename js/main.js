@@ -269,7 +269,7 @@
     }
     document.title = `${service.title} | ${cfg.companyName}`;
     root.innerHTML = `
-      <section class="page-hero service-hero" style="--hero-image:url('/${service.image}')">
+      <section class="page-hero service-hero" style="--hero-image:url('${service.image}')">
         <div class="container hero-grid">
           <div class="hero-copy reveal">
             <p class="eyebrow">${icon(service.icon)} ${service.eyebrow}</p>
