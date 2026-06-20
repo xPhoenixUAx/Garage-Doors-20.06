@@ -14,6 +14,21 @@
     return `<i data-lucide="${name}" ${attrs}></i>`;
   }
 
+  function assetUrl(path) {
+    try {
+      return new URL(path, document.baseURI).href;
+    } catch {
+      return path;
+    }
+  }
+
+  function hydrateHeroImages() {
+    qa("[data-hero-image]").forEach(el => {
+      const path = el.getAttribute("data-hero-image");
+      if (path) el.style.setProperty("--hero-image", `url("${assetUrl(path)}")`);
+    });
+  }
+
   function header() {
     return `
       <div class="topbar">
@@ -254,6 +269,100 @@
     update();
   }
 
+  function initSystemOverview() {
+    const section = q(".system-overview-section");
+    if (!section) return;
+
+    const visual = q(".system-visual", section);
+    const preview = q("[data-system-image-preview]", section);
+    const points = qa("[data-system-image]", section);
+    if (!visual || !preview || !points.length) return;
+
+    points.forEach(point => {
+      const src = point.getAttribute("data-system-image");
+      if (src) {
+        const img = new Image();
+        img.src = src;
+      }
+    });
+
+    function show(point) {
+      const src = point.getAttribute("data-system-image");
+      if (!src || preview.getAttribute("src") === src) {
+        visual.classList.add("has-preview");
+      } else {
+        preview.setAttribute("src", src);
+        visual.classList.add("has-preview");
+      }
+      points.forEach(item => item.classList.toggle("is-active", item === point));
+    }
+
+    function reset() {
+      visual.classList.remove("has-preview");
+      points.forEach(item => item.classList.remove("is-active"));
+    }
+
+    points.forEach(point => {
+      point.addEventListener("mouseenter", () => show(point));
+      point.addEventListener("focusin", () => show(point));
+    });
+    section.addEventListener("mouseleave", reset);
+    section.addEventListener("focusout", event => {
+      if (!section.contains(event.relatedTarget)) reset();
+    });
+  }
+
+  function initIssueProjectSlider() {
+    const slider = q("[data-issue-slider]");
+    if (!slider) return;
+
+    const slides = qa("[data-issue-slide]", slider);
+    const dotsRoot = q("[data-issue-dots]", slider);
+    if (!slides.length || !dotsRoot) return;
+
+    let index = Math.max(0, slides.findIndex(slide => slide.classList.contains("active")));
+    let timer = null;
+
+    dotsRoot.innerHTML = slides.map((_, i) => `<button type="button" aria-label="Show situation ${i + 1}"></button>`).join("");
+    const dots = qa("button", dotsRoot);
+
+    function show(nextIndex) {
+      index = (nextIndex + slides.length) % slides.length;
+      slides.forEach((slide, i) => slide.classList.toggle("active", i === index));
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+        dot.setAttribute("aria-current", i === index ? "true" : "false");
+      });
+    }
+
+    function start() {
+      stop();
+      timer = window.setInterval(() => show(index + 1), 4200);
+    }
+
+    function stop() {
+      if (timer) window.clearInterval(timer);
+      timer = null;
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        show(i);
+        start();
+      });
+    });
+
+    slider.addEventListener("mouseenter", stop);
+    slider.addEventListener("mouseleave", start);
+    slider.addEventListener("focusin", stop);
+    slider.addEventListener("focusout", event => {
+      if (!slider.contains(event.relatedTarget)) start();
+    });
+
+    show(index);
+    start();
+  }
+
   function list(items) {
     return `<ul class="check-list">${items.map(item => `<li>${icon("check")}<span>${item}</span></li>`).join("")}</ul>`;
   }
@@ -267,9 +376,10 @@
       root.innerHTML = `<section class="section"><div class="container"><h1>Service not found</h1><p>Please return to the services directory.</p></div></section>`;
       return;
     }
+    const heroImage = assetUrl(service.image);
     document.title = `${service.title} | ${cfg.companyName}`;
     root.innerHTML = `
-      <section class="page-hero service-hero" style="--hero-image:url('${service.image}')">
+        <section class="page-hero service-hero" style="--hero-image:url('${heroImage}')">
         <div class="container hero-grid">
           <div class="hero-copy reveal">
             <p class="eyebrow">${icon(service.icon)} ${service.eyebrow}</p>
@@ -463,7 +573,10 @@
     injectChrome();
     renderServices();
     initServiceShowcase();
+    initSystemOverview();
+    initIssueProjectSlider();
     renderServicePage();
+    hydrateHeroImages();
     renderLegal();
     hydrateConfig();
     interactions();

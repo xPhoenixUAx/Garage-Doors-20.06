@@ -15,14 +15,15 @@
       href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/bundle.css?v=2026062046" />
+    <link rel="stylesheet" href="css/bundle.css?v=2026062058" />
   </head>
   <body>
     <div data-site-header></div>
     <main>
       <section
         class="hero"
-        style="--hero-image: url('img/content/home-hero.webp')"
+        data-hero-image="img/content/home-hero.webp"
+        style="--hero-image: url('../img/content/home-hero.webp')"
       >
         <div class="container hero-grid">
           <div class="hero-copy reveal">
@@ -125,6 +126,50 @@
           </article>
         </div>
       </section>
+      <section class="section system-overview-section">
+        <div class="container">
+          <div class="system-overview-card reveal">
+            <div class="system-visual">
+              <img data-system-image-base src="img/content/full-cycle-overview.webp" alt="Garage door parts and tools prepared for service" />
+              <img data-system-image-preview src="img/content/full-cycle-overview.webp" alt="" aria-hidden="true" />
+              <div class="system-visual-label">
+                <strong>Full-cycle support</strong>
+                <span>Repair, replace, maintain, upgrade, and secure</span>
+              </div>
+            </div>
+            <div class="system-copy">
+              <p class="eyebrow">
+                <i data-lucide="settings-2"></i> Whole door system
+              </p>
+              <h2>One request can cover the door, opener, springs, tracks, and safety hardware</h2>
+              <p>
+                A garage door problem is rarely just one part. A noisy door can
+                point to rollers, hinges, opener force settings, worn cables, or
+                a balance issue. Customers can describe the full symptom and get
+                routed toward the right service path.
+              </p>
+              <div class="system-points">
+                <article data-system-image="img/services/garage-door-repair.webp" tabindex="0">
+                  <i data-lucide="move-horizontal"></i>
+                  <div><strong>Door movement</strong><span>Panels, rollers, hinges, tracks, and alignment.</span></div>
+                </article>
+                <article data-system-image="img/services/spring-replacement.webp" tabindex="0">
+                  <i data-lucide="rotate-3d"></i>
+                  <div><strong>Lift system</strong><span>Springs, drums, cables, and door balance.</span></div>
+                </article>
+                <article data-system-image="img/services/garage-door-opener-repair.webp" tabindex="0">
+                  <i data-lucide="radio-tower"></i>
+                  <div><strong>Opener control</strong><span>Motors, remotes, keypads, rails, and sensors.</span></div>
+                </article>
+                <article data-system-image="img/services/emergency-garage-door-service.webp" tabindex="0">
+                  <i data-lucide="shield-check"></i>
+                  <div><strong>Safety check</strong><span>Stuck-open, off-track, urgent access, and security issues.</span></div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section class="section blue-section services-showcase">
         <div class="container">
           <div class="section-head services-showcase-head reveal">
@@ -174,6 +219,76 @@
               <a href="contact.html">Request a FREE Quote</a></strong
             >
           </div>
+        </div>
+      </section>
+      <section class="section issue-guide-section">
+        <div class="container issue-guide-head reveal">
+          <div>
+            <p class="eyebrow">
+              <i data-lucide="wrench"></i> Common service situations
+            </p>
+            <h2>Our Projects Tailored To Client Needs</h2>
+          </div>
+          <p>
+            Each situation shows the type of garage door problem, the visual
+            context a customer may recognize, and the service path that usually
+            fits the request.
+          </p>
+        </div>
+        <div class="issue-project-slider reveal" data-issue-slider>
+          <article class="issue-project-slide active" data-issue-slide>
+            <div class="issue-project-images">
+              <figure><img src="img/services/garage-door-repair.webp" alt="Garage door repair technician working on side hardware" /></figure>
+              <figure><img src="img/services/cable-track-repair.webp" alt="Garage door cable and track alignment repair" /></figure>
+              <figure><img src="img/content/home-hero.webp" alt="Residential garage door service at a home" /></figure>
+            </div>
+            <div class="issue-project-card">
+              <p class="eyebrow">Residential repair</p>
+              <h3>Noisy, uneven, or stuck door</h3>
+              <p>For rollers, hinges, tracks, panels, cable movement, and general repair diagnostics.</p>
+              <a class="btn btn-primary" href="garage-door-repair.html"><span>View Details</span><b></b></a>
+            </div>
+          </article>
+          <article class="issue-project-slide" data-issue-slide>
+            <div class="issue-project-images">
+              <figure><img src="img/services/spring-replacement.webp" alt="Garage door spring replacement close-up" /></figure>
+              <figure><img src="img/content/full-cycle-overview.webp" alt="Garage door replacement parts and tools" /></figure>
+              <figure><img src="img/services/maintenance-tune-up.webp" alt="Garage door maintenance inspection" /></figure>
+            </div>
+            <div class="issue-project-card">
+              <p class="eyebrow">Lift system service</p>
+              <h3>Heavy door or loud bang</h3>
+              <p>For spring gaps, balance problems, unsafe lifting, and doors the opener should not force.</p>
+              <a class="btn btn-primary" href="spring-replacement.html"><span>View Details</span><b></b></a>
+            </div>
+          </article>
+          <article class="issue-project-slide" data-issue-slide>
+            <div class="issue-project-images">
+              <figure><img src="img/services/emergency-garage-door-service.webp" alt="Emergency garage door service vehicle near home" /></figure>
+              <figure><img src="img/services/garage-door-opener-repair.webp" alt="Garage door opener repair work" /></figure>
+              <figure><img src="img/services/smart-garage-controls.webp" alt="Smart garage control setup" /></figure>
+            </div>
+            <div class="issue-project-card">
+              <p class="eyebrow">Urgent access</p>
+              <h3>Security issue or trapped vehicle</h3>
+              <p>For stuck-open doors, trapped vehicles, off-track doors, and damaged doors after impact.</p>
+              <a class="btn btn-primary" href="emergency-garage-door-service.html"><span>View Details</span><b></b></a>
+            </div>
+          </article>
+          <article class="issue-project-slide" data-issue-slide>
+            <div class="issue-project-images">
+              <figure><img src="img/services/commercial-garage-doors.webp" alt="Commercial garage door bays" /></figure>
+              <figure><img src="img/services/new-garage-door-installation.webp" alt="New garage door installation at a home" /></figure>
+              <figure><img src="img/services/maintenance-tune-up.webp" alt="Commercial garage door maintenance planning" /></figure>
+            </div>
+            <div class="issue-project-card">
+              <p class="eyebrow">Commercial support</p>
+              <h3>Business bay or high-use door</h3>
+              <p>For roll-up doors, sectional commercial doors, operator issues, and planned maintenance.</p>
+              <a class="btn btn-primary" href="commercial-garage-doors.html"><span>View Details</span><b></b></a>
+            </div>
+          </article>
+          <div class="issue-project-dots" data-issue-dots aria-label="Service situation slides"></div>
         </div>
       </section>
       <section class="section why-section">
@@ -406,8 +521,8 @@
     </main>
     <div data-site-footer></div>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script src="js/site-config.js?v=2026062046"></script>
-    <script src="js/services-data.js?v=2026062046"></script>
-    <script src="js/main.js?v=2026062046"></script>
+    <script src="js/site-config.js?v=2026062058"></script>
+    <script src="js/services-data.js?v=2026062058"></script>
+    <script src="js/main.js?v=2026062058"></script>
   </body>
 </html>
