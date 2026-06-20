@@ -1397,6 +1397,15 @@ p { margin: 0 0 18px; }
     text-align: left;
   }
   .section-head { display: block; }
+  .acc-btn {
+    align-items: flex-start;
+    gap: 16px;
+    line-height: 1.35;
+  }
+  .acc-panel p {
+    line-height: 1.7;
+    padding-bottom: 24px;
+  }
   .request-box { padding: 24px; }
   .service-form-band .request-box {
     padding: 20px;

@@ -383,11 +383,21 @@
       const buttons = qa(".acc-btn", accordion);
       const panels = qa(".acc-panel", accordion);
 
+      function panelHeight(panel) {
+        return `${panel.scrollHeight + 14}px`;
+      }
+
       function setPanel(btn, panel, open) {
         btn.classList.toggle("active", open);
         btn.setAttribute("aria-expanded", String(open));
         panel.classList.toggle("open", open);
-        panel.style.maxHeight = open ? `${panel.scrollHeight}px` : "0px";
+        panel.style.maxHeight = open ? panelHeight(panel) : "0px";
+      }
+
+      function refreshPanels() {
+        panels.forEach(panel => {
+          if (panel.classList.contains("open")) panel.style.maxHeight = panelHeight(panel);
+        });
       }
 
       buttons.forEach(btn => {
@@ -399,6 +409,10 @@
           panels.forEach((item, index) => setPanel(buttons[index], item, item === panel && shouldOpen));
         });
       });
+
+      window.addEventListener("load", refreshPanels);
+      window.addEventListener("resize", refreshPanels);
+      document.fonts?.ready?.then(refreshPanels);
     });
 
     qa("[data-contact-form]").forEach(form => {
